@@ -8,7 +8,7 @@ export default class RepositoriesSelected extends Component{
         super();
         this.state = {
             repositoriesSelected: []
-        }
+        };
         RepositorySelectedSubject.subscribe(repositorySelected => this.setState({
             repositoriesSelected: [...this.state.repositoriesSelected, repositorySelected]
         }));

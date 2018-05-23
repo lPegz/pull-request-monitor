@@ -27,7 +27,7 @@ export default class OrganizationList extends Component {
     this.setState({
       repositoryOpened: this.state.repositoryOpened === organizationIndex ? -1 : organizationIndex
     });
-  }
+  };
 
   render() {
     let returnedValue = (<li>You must provide: github_token, github_url, github_login</li>);
