@@ -16,7 +16,7 @@ class App extends Component {
                     <img src={github_logo} className="GitHub-logo" alt="logo"/>
                     <img src={pr_logo} className="PR-logo" alt="logo"/>
                     <img src={rsx_logo} className="App-logo" alt="logo"/>
-                    <h1 className="App-title">Welcome to React</h1>
+                    <h1 className="App-title">Pull Request Monitor</h1>
                 </header>
                 <RepositoriesSelected/>
                 <OrganizationList/>
