@@ -17,10 +17,6 @@ export default class OrganizationList extends Component {
     constructor(props) {
         super();
         this.state = props;
-
-        fetchOrganizations()
-            .then((organizations) => this.setState({organizations}))
-            .catch(console.error);
     }
 
     toggleRepositories = (organizationIndex) => {
@@ -29,10 +25,19 @@ export default class OrganizationList extends Component {
         });
     };
 
+    componentWillMount() {
+        if (!this.state.organizations) {
+            fetchOrganizations()
+                .then((organizations) => this.setState({organizations}))
+                .catch(console.error);
+        }
+    }
+
     render() {
-        let returnedValue = (<li>You must provide: github_token, github_url, github_login</li>);
+        let notFetch = (<li>You must provide: github_token, github_url, github_login</li>);
+        let formattedOrganizations;
         if (this.state.organizations) {
-            returnedValue = this.state.organizations
+            formattedOrganizations = this.state.organizations
                 .map((organization, index) => {
                     return <Organization
                         data={organization}
@@ -46,7 +51,7 @@ export default class OrganizationList extends Component {
         return (
             <div>
                 <h1>Repositories</h1>
-                <ul>{returnedValue}</ul>
+                <ul>{this.state.organizations ? formattedOrganizations : notFetch}</ul>
             </div>
         );
     }
