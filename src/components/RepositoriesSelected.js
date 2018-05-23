@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import { Subject } from 'rxjs';
+import React, {Component} from 'react';
+import {Subject} from 'rxjs';
 
 export const RepositorySelectedSubject = new Subject();
 
-export default class RepositoriesSelected extends Component{
+export default class RepositoriesSelected extends Component {
     constructor() {
         super();
         this.state = {
@@ -19,7 +19,8 @@ export default class RepositoriesSelected extends Component{
             <h1>Repositories Selected</h1>
             <ul>
                 {
-                    this.state.repositoriesSelected.map(({ name, url }, index) => <RepositorySelected name={name} url={url} key={index} />)
+                    this.state.repositoriesSelected.map(({name, url}) => <RepositorySelected name={name} url={url}
+                                                                                             key={name}/>)
                 }
             </ul>
         </div>);
