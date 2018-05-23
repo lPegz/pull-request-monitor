@@ -19,7 +19,7 @@ function _transformData({data}) {
     if (data.user) {
         organizations = data.user.organizations.edges
             .map(({node}) => {
-                node.repositories = node.repositories.edges.map((repo) => repo.node)
+                node.repositories = node.repositories.edges.map((repo) => repo.node);
                 return node;
             })
     }
