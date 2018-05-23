@@ -12,7 +12,7 @@ Show all Pull Requests opened in the repositories you have interesting on whethe
     - Admin:
       - read:org
 - github_login: Login from you GitHub
-- github_url: Base URL from the GitHub you want to retrieve the information (eg.: https://github.com)
+- github_url: Base URL from the GitHub you want to retrieve the information (eg.: https://api.github.com)
 
 # Running
 

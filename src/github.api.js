@@ -3,7 +3,7 @@ const baseUrl = localStorage.getItem('github_url');
 const login = localStorage.getItem('github_login');
 
 export default function fetchOrganizations() {
-  return fetch(`${baseUrl}/api/graphql`, {
+  return fetch(`${baseUrl}/graphql`, {
     method: 'POST',
     headers: {
       Authorization: `bearer ${token}`
